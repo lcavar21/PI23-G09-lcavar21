@@ -34,7 +34,9 @@ namespace EvaluationManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
+                MessageBox.Show("Korisničko ime nije uneseno!","problem",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                //greška
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

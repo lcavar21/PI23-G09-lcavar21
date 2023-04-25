@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Form = new System.Windows.Forms.TextBox();
+            this.LoginKorisnickoIme = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtUsername = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.Label();
@@ -37,12 +37,12 @@
             this.BtnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form
+            // LoginKorisnickoIme
             // 
-            this.Form.Location = new System.Drawing.Point(231, 92);
-            this.Form.Name = "Form";
-            this.Form.Size = new System.Drawing.Size(250, 20);
-            this.Form.TabIndex = 0;
+            this.LoginKorisnickoIme.Location = new System.Drawing.Point(231, 92);
+            this.LoginKorisnickoIme.Name = "LoginKorisnickoIme";
+            this.LoginKorisnickoIme.Size = new System.Drawing.Size(250, 20);
+            this.LoginKorisnickoIme.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
@@ -97,7 +97,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.Form);
+            this.Controls.Add(this.LoginKorisnickoIme);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -111,7 +111,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Form;
+        private System.Windows.Forms.TextBox LoginKorisnickoIme;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label txtUsername;
         private System.Windows.Forms.Label txtPassword;
