@@ -11,6 +11,7 @@ namespace Evaluation_Manager
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// TEST
         [STAThread]
         static void Main()
         {
