@@ -74,7 +74,7 @@ namespace Evaluation_Manager
         }
         private void btnCancelClick(object sender,EventArgs e)
         {
-            //prazno
+            //prazno s razlogom
         }
     }
 }
