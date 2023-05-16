@@ -6,10 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-u
+
 namespace Evaluation_Manager
 {
     public partial class FrmEvaluation : Form
@@ -19,6 +20,11 @@ namespace Evaluation_Manager
             InitializeComponent();
         }
         private Student student;
+        public Student SelectedStudent
+        {
+            get => student;
+            set => student = value;
+        }
         public FrmEvaluation(Student selectedStudent)
         {
             InitializeComponent();
@@ -71,10 +77,33 @@ namespace Evaluation_Manager
 
             numPoints.Minimum = 0;
             numPoints.Maximum = currentActivity.MaxPoints;
+            var evaluation = EvaluationRepository.GetEvaluation(SelectedStudent, currentActivity);
+            if (evaluation != null)
+            {
+                txtTeacher.Text = evaluation.Evaluator.ToString;
+                txtEvaluationDate.Text = evaluation.EvaluationDate.ToString();
+                numPoints.Value= evaluation.Points;
+            } else
+            {
+                txtTeacher.Text = FrmLogin.LoggedTeacher.ToString();
+                txtEvaluationDate.Text = "-";
+                numPoints.Value = 0;
+            }
         }
         private void btnCancelClick(object sender,EventArgs e)
         {
-            //prazno s razlogom
+            Close(); //prazno s razlogom
+        }
+        private void btnSave_click(ObjectSecurity ender,EventArgs a)
+        {
+            var activity=cboActivities.SelectedItem as Activity;
+            var teacher = FrmLogin.LoggedTeacher;
+            int points = (int)numPoints.Value;
+            teacher.PerformEvaluation(SelectedStudent, activity, points);
+            Close();
+
+            
+
         }
     }
 }

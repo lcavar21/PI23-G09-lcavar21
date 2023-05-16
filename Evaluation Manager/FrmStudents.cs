@@ -36,12 +36,14 @@ namespace Evaluation_Manager
 
         private void btnEvaluateStudent_Click(object sender, EventArgs e)
         {
-            Student selectedStudent = dgvStudents.CurrentRow.DataBoundItem as Student;
-            if (selectedStudent != null)
-            {
-                FrmEvaluation frmEvaluation= new FrmEvaluation(selectedStudent); //napraviti konstruktor za studenta
-                frmEvaluation.ShowDialog();
-            }
+
+                Student selectedStudent = dgvStudents.CurrentRow.DataBoundItem as Student;
+                if (selectedStudent != null)
+                {
+                    FrmEvaluation frmEvaluation = new FrmEvaluation(selectedStudent);
+                    frmEvaluation.ShowDialog();
+                }
+            
         }
     }
 }

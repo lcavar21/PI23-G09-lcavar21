@@ -32,7 +32,7 @@
             this.cboActivities = new System.Windows.Forms.ComboBox();
             this.txtActivityDescription = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnCancelClick = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.numPoints = new System.Windows.Forms.NumericUpDown();
             this.txtMinForSignature = new System.Windows.Forms.TextBox();
             this.txtMinForGrade = new System.Windows.Forms.TextBox();
@@ -86,12 +86,12 @@
             // 
             // btnCancelClick
             // 
-            this.btnCancelClick.Location = new System.Drawing.Point(713, 403);
-            this.btnCancelClick.Name = "btnCancelClick";
-            this.btnCancelClick.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelClick.TabIndex = 4;
-            this.btnCancelClick.Text = "Odustani";
-            this.btnCancelClick.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(713, 403);
+            this.btnCancel.Name = "btnCancelClick";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Odustani";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // numPoints
             // 
@@ -196,7 +196,7 @@
             this.Controls.Add(this.txtMinForGrade);
             this.Controls.Add(this.txtMinForSignature);
             this.Controls.Add(this.numPoints);
-            this.Controls.Add(this.btnCancelClick);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtActivityDescription);
             this.Controls.Add(this.cboActivities);
@@ -216,7 +216,7 @@
         private System.Windows.Forms.ComboBox cboActivities;
         private System.Windows.Forms.TextBox txtActivityDescription;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnCancelClick;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.NumericUpDown numPoints;
         private System.Windows.Forms.TextBox txtMinForSignature;
         private System.Windows.Forms.TextBox txtMinForGrade;
