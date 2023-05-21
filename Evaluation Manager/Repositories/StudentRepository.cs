@@ -1,9 +1,14 @@
 ﻿using DBLayer;
 using Evaluation_Manager.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace Evaluation_Manager.Repositories
+{
     public class StudentRepository
     {
         public static Student GetStudent(int id)
@@ -13,7 +18,7 @@ using System;
             string sql = $"SELECT * FROM Students WHERE Id = {id}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
-            if (reader.HasRows)
+            if(reader.HasRows)
             {
                 reader.Read();
                 student = CreateObject(reader);
@@ -22,7 +27,7 @@ using System;
 
             DB.CloseConnection();
             return student;
-        } //public static Student GetStudent
+        }
 
         public static List<Student> GetStudents()
         {
@@ -41,23 +46,14 @@ using System;
             DB.CloseConnection();
 
             return students;
-        } //public static List
+        }
 
         private static Student CreateObject(SqlDataReader reader)
         {
             int id = int.Parse(reader["Id"].ToString());
             string firstName = reader["FirstName"].ToString();
             string lastName = reader["LastName"].ToString();
-            int grade = 0;
-            try
-            {
-                grade = int.Parse(reader["Grade"].ToString());
-
-            } catch (Exception)
-            {
-                //ignore
-            }
-
+            int grade = int.Parse(reader["Grade"].ToString());
 
             var student = new Student
             {
@@ -68,6 +64,6 @@ using System;
             };
 
             return student;
-        } //private static Student
+        }
     }
- //public class StudentRepository
+}

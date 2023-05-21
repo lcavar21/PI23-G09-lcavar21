@@ -1,4 +1,5 @@
 ﻿using Evaluation_Manager.Models;
+using Evaluation_Manager.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace Evaluation_Manager
 {
@@ -23,6 +23,7 @@ namespace Evaluation_Manager
         {
             ShowStudents();
         }
+
         private void ShowStudents()
         {
             var students = StudentRepository.GetStudents();
@@ -36,14 +37,12 @@ namespace Evaluation_Manager
 
         private void btnEvaluateStudent_Click(object sender, EventArgs e)
         {
-
-                Student selectedStudent = dgvStudents.CurrentRow.DataBoundItem as Student;
-                if (selectedStudent != null)
-                {
-                    FrmEvaluation frmEvaluation = new FrmEvaluation(selectedStudent);
-                    frmEvaluation.ShowDialog();
-                }
-            
+            Student selectedStudent = dgvStudents.CurrentRow.DataBoundItem as Student;
+            if (selectedStudent != null)
+            {
+                FrmEvaluation frmEvaluation = new FrmEvaluation(selectedStudent);
+                frmEvaluation.ShowDialog();
+            }
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Evaluation_Manager.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +12,8 @@ namespace Evaluation_Manager
 {
     public partial class FrmLogin : Form
     {
-        public static Teacher LoggedTeacher
-        {
-            get;set;
-        }
+        string username = "nastavnik";
+        string password = "test";
 
         public FrmLogin()
         {
@@ -35,8 +32,7 @@ namespace Evaluation_Manager
             }
             else
             {
-                LoggedTeacher = TeacherRepository.GetTeacher(txtUsername.Text);
-                    if(LoggedTeacher!=null && LoggedTeacher.Password==txtPassword.Text)
+                if (txtUsername.Text == username && txtPassword.Text == password)
                 {
                     FrmStudents frmStudents = new FrmStudents();
                     Hide();
@@ -48,11 +44,6 @@ namespace Evaluation_Manager
                     MessageBox.Show("Krivi podaci!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
