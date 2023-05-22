@@ -48,21 +48,17 @@ namespace Evaluation_Manager.Repositories
             return students;
         }
 
-        private static Student CreateObject(SqlDataReader reader)
-        {
+        private static Student CreateObject(SqlDataReader reader) {
             int id = int.Parse(reader["Id"].ToString());
             string firstName = reader["FirstName"].ToString();
             string lastName = reader["LastName"].ToString();
-            int grade = int.Parse(reader["Grade"].ToString());
-
-            var student = new Student
-            {
+            int.TryParse(reader["Grade"].ToString(), out int grade);
+            var student = new Student {
                 Id = id,
                 FirstName = firstName,
                 LastName = lastName,
                 Grade = grade
             };
-
             return student;
         }
     }
