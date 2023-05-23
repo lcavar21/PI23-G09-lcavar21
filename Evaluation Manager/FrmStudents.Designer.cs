@@ -30,6 +30,7 @@
         {
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.btnEvaluateStudent = new System.Windows.Forms.Button();
+            this.btnGenerateEvaluationRecord = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,29 +40,47 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(12, 12);
+            this.dgvStudents.Location = new System.Drawing.Point(16, 15);
+            this.dgvStudents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.RowHeadersWidth = 51;
             this.dgvStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudents.Size = new System.Drawing.Size(776, 390);
+            this.dgvStudents.Size = new System.Drawing.Size(1035, 480);
             this.dgvStudents.TabIndex = 0;
             // 
             // btnEvaluateStudent
             // 
-            this.btnEvaluateStudent.Location = new System.Drawing.Point(680, 408);
+            this.btnEvaluateStudent.Location = new System.Drawing.Point(907, 502);
+            this.btnEvaluateStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEvaluateStudent.Name = "btnEvaluateStudent";
-            this.btnEvaluateStudent.Size = new System.Drawing.Size(108, 30);
+            this.btnEvaluateStudent.Size = new System.Drawing.Size(144, 37);
             this.btnEvaluateStudent.TabIndex = 1;
             this.btnEvaluateStudent.Text = "Evaluiraj studenta";
             this.btnEvaluateStudent.UseVisualStyleBackColor = true;
             this.btnEvaluateStudent.Click += new System.EventHandler(this.btnEvaluateStudent_Click);
             // 
+            // btnGenerateEvaluationRecord
+            // 
+            this.btnGenerateEvaluationRecord.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGenerateEvaluationRecord.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGenerateEvaluationRecord.Location = new System.Drawing.Point(741, 503);
+            this.btnGenerateEvaluationRecord.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerateEvaluationRecord.Name = "btnGenerateEvaluationRecord";
+            this.btnGenerateEvaluationRecord.Size = new System.Drawing.Size(144, 37);
+            this.btnGenerateEvaluationRecord.TabIndex = 2;
+            this.btnGenerateEvaluationRecord.Text = "Generiraj izvještaj";
+            this.btnGenerateEvaluationRecord.UseVisualStyleBackColor = false;
+            this.btnGenerateEvaluationRecord.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmStudents
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnGenerateEvaluationRecord);
             this.Controls.Add(this.btnEvaluateStudent);
             this.Controls.Add(this.dgvStudents);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmStudents";
             this.Text = "FrmStudents";
             this.Load += new System.EventHandler(this.FrmStudents_Load);
@@ -74,5 +93,6 @@
 
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Button btnEvaluateStudent;
+        private System.Windows.Forms.Button btnGenerateEvaluationRecord;
     }
 }
